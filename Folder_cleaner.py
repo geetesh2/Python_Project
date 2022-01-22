@@ -16,6 +16,7 @@ if __name__ == "__main__":
     createIfNotExist('Images')
     createIfNotExist('Docs')
     createIfNotExist('Media')
+    createIfNotExist('Python Projects')
     createIfNotExist('Others')
 
     imgExts = [".png", ".jpg", ".jpeg"]
@@ -28,6 +29,9 @@ if __name__ == "__main__":
     mediaExts = [".mp4", ".mp3", ".flv"]
     medias = [file for file in files if os.path.splitext(file)[1].lower() in mediaExts]
 
+    ProjectExts = [".py"]
+    Projects = [file for file in files if os.path.splitext(file)[1].lower() in ProjectExts]
+
     others = []
     for file in files:
         ext = os.path.splitext(file)[1].lower()
@@ -37,5 +41,6 @@ if __name__ == "__main__":
     move("Images", images)
     move("Docs", docs)
     move("Media", medias)
+    move("Python Projects",Projects)
     move("Others", others)
 
